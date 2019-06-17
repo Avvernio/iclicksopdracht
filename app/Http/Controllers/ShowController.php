@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Hash;
 use Illuminate\Http\Request;
 
 class ShowController extends Controller
@@ -25,12 +24,20 @@ class ShowController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function add()
+    public function show()
     {
-        return view('show');
+        $results = DB::select("select id, name, email, town from users");
+        return view('show', compact('results'));
     }
 
-    public function show(Request $request){
+    public function update($id){
+        $results = DB::select("select id, name, email, town from users where id = $id");
+        return view('update', compact('results'));
+    }
 
+    public function updateValues(Request $request){
+        $request->validate(['name' => 'required', 'email'=>'required', 'town'=>'required', 'id'=>'required']);
+        DB::update("update users set name = '$request->name', email = '$request->email', town = '$request->town' where id = $request->id");
+        return redirect()->route('show');
     }
 }

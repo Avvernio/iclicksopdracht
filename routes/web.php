@@ -20,4 +20,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add', 'AddController@add')->name('add');
-Route::post('/store', 'Addcontroller@store');
+Route::get('/show', 'ShowController@show')->name('show');
+Route::get('/update/{id}', 'ShowController@update');
+Route::post('/store', 'ShowController@updateValues');
