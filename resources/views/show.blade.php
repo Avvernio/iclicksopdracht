@@ -11,9 +11,9 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Date</th>
-                        <th>Price</th>
-                        <th>Description</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Town</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>

@@ -24,7 +24,7 @@
                         </div>
                     @endif
 
-                        <form action="/store" method="POST">
+                        <form action="/storeValues" method="POST">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <input type="hidden" name="id" value="{{old('name', $results[0]->id)}}">
