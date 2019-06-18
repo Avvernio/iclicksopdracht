@@ -28,7 +28,7 @@ class ShowController extends Controller
     //fetches info from database and passes it to the /show view.
     public function show()
     {
-        $results = DB::select("select id, name, email, town from users");
+        $results = DB::select("select id, name, email, town, created_at from users");
         return view('show', compact('results'));
     }
 

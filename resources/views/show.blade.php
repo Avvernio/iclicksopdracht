@@ -14,6 +14,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Town</th>
+                        <th>Created at</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -25,6 +26,7 @@
                             <td>{{$result->name}}</td>
                             <td>{{$result->email}}</td>
                             <td>{{$result->town}}</td>
+                            <td>{{$result->created_at}}</td>
                             <td><a href="/update/{{$result->id}}">Edit</a></td>
                             <td><form method="POST" action="/delete">
                                     {{csrf_field()}}
